@@ -12,17 +12,17 @@
 
 <body>
 
-    <button id="b1" style="background-image: url('img/vazio.png')"></button>
-    <button id="b2" style="background-image: url('img/vazio.png')"></button>
-    <button id="b3" style="background-image: url('img/vazio.png')"></button>
+    <button id="b1"></button>
+    <button id="b2"></button>
+    <button id="b3"></button>
     <br>
-    <button id="b4" style="background-image: url('img/vazio.png')"></button>
-    <button id="b5" style="background-image: url('img/vazio.png')"></button>
-    <button id="b6" style="background-image: url('img/vazio.png')"></button>
+    <button id="b4"></button>
+    <button id="b5"></button>
+    <button id="b6"></button>
     <br>
-    <button id="b7" style="background-image: url('img/vazio.png')"></button>
-    <button id="b8" style="background-image: url('img/vazio.png')"></button>
-    <button id="b9" style="background-image: url('img/vazio.png')"></button>
+    <button id="b7"></button>
+    <button id="b8"></button>
+    <button id="b9"></button>
 
 </body>
 

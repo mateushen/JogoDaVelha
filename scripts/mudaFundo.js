@@ -4,9 +4,13 @@ window.addEventListener('load', () => {
         let bt = document.getElementById('b' + i);
         bt.addEventListener('click', (event) => {
 
-            // alert('OK');
+            //alert('OK');
+            console.log(bt);
+            bt.style.backgroundImage = 'url(img/o.png)';
 
-            bt.setAttribute('sr', 'img/x.png');
+            // bt.setAttribute('background-image', 'url(img/x.png)');
+
+
         });
     }
 
