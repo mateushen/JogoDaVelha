@@ -8,21 +8,33 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="css/button.css">
     <script type="text/javascript" src="scripts/mudaFundo.js"></script>
+    <?php
+    session_start();
+    $j1 = $_SESSION['jogador1'];
+    $j2 = $_SESSION['jogador2'];
+    if($_SESSION['status'] != 'ativo'){
+        header('Location: index.php');
+    }
+    ?>
 </head>
 
 <body>
+    <br>
+    <p>Primeiro a jogar: <?= $j1 ?></p>
+    <p>Segundo a jogar: <?= $j2 ?></p>
+    <br><br>
 
+    <button id="b0"></button>
     <button id="b1"></button>
     <button id="b2"></button>
-    <button id="b3"></button>
     <br>
+    <button id="b3"></button>
     <button id="b4"></button>
     <button id="b5"></button>
-    <button id="b6"></button>
     <br>
+    <button id="b6"></button>
     <button id="b7"></button>
     <button id="b8"></button>
-    <button id="b9"></button>
 
 </body>
 

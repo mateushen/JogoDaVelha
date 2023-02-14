@@ -20,9 +20,8 @@ window.addEventListener('load', () => {
                         console.log(json);
                         if (json.status == 'ok') {
                             window.open('jogo.php', '_self');
-                            //document.forms[0].reset();
                         } else {
-
+                            alert('Erro: ' + json.status)
                         }
                     })
             } else return false;
@@ -30,7 +29,7 @@ window.addEventListener('load', () => {
     });
 
     function verificaJogador() {
-        if ((document.forms[0].jogador1.value.length < 2) && (document.forms[0].jogador2.value.length < 2)) {
+        if ((document.forms[0].nome1.value.length < 2) && (document.forms[0].nome2.value.length < 2)) {
             alert('Informe os nomes.');
             return false;
         } else {
