@@ -14,9 +14,9 @@
     <main>
         <form>
 
-            <input type="text" placeholder="Jogador" id="nome1" name="nome1" autocomplete="off">
+            <input type="text" placeholder="Jogador 1" id="nome1" name="nome1">
 
-            <input type="text" placeholder="Jogador" id="nome2" name="nome2" autocomplete="off">
+            <input type="text" placeholder="Jogador 2" id="nome2" name="nome2">
 
             <button>OK</button><br><br>
 

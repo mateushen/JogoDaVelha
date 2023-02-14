@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
     document.forms[0].addEventListener('submit', (event) => {
         event.preventDefault(verifica());
 
-        // Verifica se os inputs estão preenchidos corretamente
         function verifica() {
             ok = verificaJogador();
             if (ok) {
@@ -21,7 +20,7 @@ window.addEventListener('load', () => {
                         console.log(json);
                         if (json.status == 'ok') {
                             window.open('jogo.php', '_self');
-                            document.forms[0].reset();
+                            //document.forms[0].reset();
                         } else {
 
                         }
