@@ -7,34 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="css/button.css">
-    <script type="text/javascript" src="scripts/mudaFundo.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="scripts/verificaCampo.js"></script>
     <?php
     session_start();
     $j1 = $_SESSION['jogador1'];
     $j2 = $_SESSION['jogador2'];
-    if($_SESSION['status'] != 'ativo'){
+    if ($_SESSION['status'] != 'ativo') {
         header('Location: index.php');
     }
     ?>
 </head>
 
 <body>
-    <br>
-    <p>Primeiro a jogar: <?= $j1 ?></p>
-    <p>Segundo a jogar: <?= $j2 ?></p>
-    <br><br>
+    <header>
+        <div>
+            <br>
+            <p>Primeiro a jogar: <?= $j1 ?></p>
+            <p>Segundo a jogar: <?= $j2 ?></p>
+            <br>
+            <div>
+    </header>
 
-    <button id="b0"></button>
-    <button id="b1"></button>
-    <button id="b2"></button>
-    <br>
-    <button id="b3"></button>
-    <button id="b4"></button>
-    <button id="b5"></button>
-    <br>
-    <button id="b6"></button>
-    <button id="b7"></button>
-    <button id="b8"></button>
+
+    <main>
+        <form>
+            <input type="hidden" name="j1" value="<?= $j1 ?>" />
+            <input type="hidden" name="j1" value="<?= $j2 ?>" />
+        </form>
+        <div>
+            <button id="b0"></button>
+            <button id="b1"></button>
+            <button id="b2"></button>
+            <br>
+            <button id="b3"></button>
+            <button id="b4"></button>
+            <button id="b5"></button>
+            <br>
+            <button id="b6"></button>
+            <button id="b7"></button>
+            <button id="b8"></button>
+        </div>
+
+        <br>
+        <div>
+            <p id="msg"></p>
+        </div>
+    </main>
 
 </body>
 
