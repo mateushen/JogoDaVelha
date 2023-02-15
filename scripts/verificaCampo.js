@@ -95,10 +95,10 @@ window.addEventListener('load', () => {
                     let bt = document.getElementById('b' + i);
                     bt.setAttribute('disabled', 'true');
                 }
+
                 const dados = new FormData();
-
-                dados.append('ganhador', document.forms[0].j2.value);
-
+                var input = document. querySelector("#j2");
+                dados.append('ganhador', input.value);
 
                 const config = {
                     method: 'POST',
@@ -114,7 +114,7 @@ window.addEventListener('load', () => {
                         if (json.status == 'ok') {
                             var text = 'Deseja jogar novamente?';
                             if (confirm(text) == true) {
-                                window.location.reload();
+                                window.open('jogo.php', '_self');
                             }
                         } else {
                             window.open('index.php', '_self')
@@ -126,10 +126,10 @@ window.addEventListener('load', () => {
                     let bt = document.getElementById('b' + i);
                     bt.setAttribute('disabled', 'true');
                 }
+
                 const dados = new FormData();
-
-                dados.append('ganhador', document.forms[0].j1.value);
-
+                var input = document. querySelector("#j1");
+                dados.append('ganhador', input.value);
 
                 const config = {
                     method: 'POST',
@@ -145,7 +145,7 @@ window.addEventListener('load', () => {
                         if (json.status == 'ok') {
                             var text = 'Deseja jogar novamente?';
                             if (confirm(text) == true) {
-                                window.location.reload();
+                                window.open('jogo.php', '_self');
                             }
                         } else {
                             window.open('index.php', '_self')
@@ -153,8 +153,6 @@ window.addEventListener('load', () => {
                     })
 
             }
-
-            console.log(campo);
 
         });
 

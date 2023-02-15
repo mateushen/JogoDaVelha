@@ -32,8 +32,8 @@
 
     <main>
         <form>
-            <input type="hidden" name="j1" value="<?= $j1 ?>" />
-            <input type="hidden" name="j1" value="<?= $j2 ?>" />
+            <input type="hidden" name="j1" id="j1" value="<?= $j1 ?>" />
+            <input type="hidden" name="j2" id="j2" value="<?= $j2 ?>" />
         </form>
         <div>
             <button id="b0"></button>
