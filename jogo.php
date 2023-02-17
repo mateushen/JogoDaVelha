@@ -23,8 +23,8 @@
     <header>
         <div>
             <br>
-            <p>Primeiro a jogar: <?= $j1 ?></p>
-            <p>Segundo a jogar: <?= $j2 ?></p>
+            <p>Jogador 1: <?= $j1 ?></p>
+            <p>Jogador 2: <?= $j2 ?></p>
             <br>
             <div>
     </header>

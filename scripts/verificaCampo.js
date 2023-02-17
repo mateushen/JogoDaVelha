@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
 
     var num = 2;
+    let j = 0;
 
     for (let i = 0; i < 9; i++) {
         let bt = document.getElementById('b' + i);
@@ -13,7 +14,6 @@ window.addEventListener('load', () => {
                 bt.style.backgroundImage = 'url(img/xx.png)';
                 bt.setAttribute('disabled', 'true');
                 campo.splice(i, 1, 1);
-
             } else if (num == 2) {
                 bt.style.backgroundImage = 'url(img/oo.png)';
                 bt.setAttribute('disabled', 'true');
@@ -48,11 +48,7 @@ window.addEventListener('load', () => {
             } else if ((campo[2] == 1) && (campo[5] == 1) && (campo[8] == 1)) {
                 p.innerText = 'Jogador 2 venceu!';
                 okX = true;
-            } else {
-                p.innerText = 'Ainda não tem vencedor';
-            }
-
-            if ((campo[0] == 2) && (campo[1] == 2) && (campo[2] == 2)) {
+            } else if ((campo[0] == 2) && (campo[1] == 2) && (campo[2] == 2)) {
                 p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[3] == 2) && (campo[4] == 2) && (campo[5] == 2)) {
@@ -142,6 +138,15 @@ window.addEventListener('load', () => {
                         }
                     })
 
+            }
+            
+            if (j == 9) {
+                var text = 'EMPATE!\nDeseja jogar novamente?';
+                if (confirm(text) == true) {
+                    window.open('jogo.php', '_self');
+                }
+            } else {
+                window.open('index.php', '_self')
             }
 
         });
