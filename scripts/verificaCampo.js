@@ -1,7 +1,6 @@
 window.addEventListener('load', () => {
-
+    var click = 0;
     var num = 2;
-    let j = 0;
 
     for (let i = 0; i < 9; i++) {
         let bt = document.getElementById('b' + i);
@@ -14,63 +13,50 @@ window.addEventListener('load', () => {
                 bt.style.backgroundImage = 'url(img/xx.png)';
                 bt.setAttribute('disabled', 'true');
                 campo.splice(i, 1, 1);
+                click++;
             } else if (num == 2) {
                 bt.style.backgroundImage = 'url(img/oo.png)';
                 bt.setAttribute('disabled', 'true');
                 campo.splice(i, 1, 2);
+                click++;
             }
+            console.log(click);
             num = (num % 2) + 1;
 
             let p = document.getElementById('msg');
             p.innerText = '';
 
             if ((campo[0] == 1) && (campo[1] == 1) && (campo[2] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[3] == 1) && (campo[4] == 1) && (campo[5] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[6] == 1) && (campo[7] == 1) && (campo[8] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[0] == 1) && (campo[4] == 1) && (campo[8] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[2] == 1) && (campo[4] == 1) && (campo[6] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[0] == 1) && (campo[3] == 1) && (campo[6] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[1] == 1) && (campo[4] == 1) && (campo[7] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[2] == 1) && (campo[5] == 1) && (campo[8] == 1)) {
-                p.innerText = 'Jogador 2 venceu!';
                 okX = true;
             } else if ((campo[0] == 2) && (campo[1] == 2) && (campo[2] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[3] == 2) && (campo[4] == 2) && (campo[5] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[6] == 2) && (campo[7] == 2) && (campo[8] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[0] == 2) && (campo[4] == 2) && (campo[8] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[2] == 2) && (campo[4] == 2) && (campo[6] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[0] == 2) && (campo[3] == 2) && (campo[6] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[1] == 2) && (campo[4] == 2) && (campo[7] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else if ((campo[2] == 2) && (campo[5] == 2) && (campo[8] == 2)) {
-                p.innerText = 'Jogador 1 venceu!';
                 okO = true;
             } else {
                 p.innerText = 'Ainda não tem vencedor';
@@ -82,6 +68,9 @@ window.addEventListener('load', () => {
                     let bt = document.getElementById('b' + i);
                     bt.setAttribute('disabled', 'true');
                 }
+
+                let p = document.getElementById('msg');
+                p.innerText = 'Jogador 2 venceu!';
 
                 const dados = new FormData();
                 var input = document.querySelector("#j2");
@@ -107,11 +96,15 @@ window.addEventListener('load', () => {
                             window.open('index.php', '_self')
                         }
                     })
-            } else if (okO) {
+            }
+            if (okO) {
                 for (let i = 0; i < 9; i++) {
                     let bt = document.getElementById('b' + i);
                     bt.setAttribute('disabled', 'true');
                 }
+
+                let p = document.getElementById('msg');
+                p.innerText = 'Jogador 1 venceu!';
 
                 const dados = new FormData();
                 var input = document.querySelector("#j1");
@@ -139,14 +132,16 @@ window.addEventListener('load', () => {
                     })
 
             }
-            
-            if (j == 9) {
-                var text = 'EMPATE!\nDeseja jogar novamente?';
+
+            if ((click == 9) && (okX == false) && (okO == false)) {
+                let p = document.getElementById('msg');
+                p.innerText = 'EMPATE!';
+                var text = 'Deseja jogar novamente?';
                 if (confirm(text) == true) {
                     window.open('jogo.php', '_self');
+                } else {
+                    window.open('index.php', '_self')
                 }
-            } else {
-                window.open('index.php', '_self')
             }
 
         });
