@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
                 campo.splice(i, 1, 2);
                 click++;
             }
-            console.log(click);
+
             num = (num % 2) + 1;
 
             let p = document.getElementById('msg');
@@ -62,7 +62,6 @@ window.addEventListener('load', () => {
                 p.innerText = 'Ainda não tem vencedor';
             }
 
-
             if (okX) {
                 for (let i = 0; i < 9; i++) {
                     let bt = document.getElementById('b' + i);
@@ -86,12 +85,9 @@ window.addEventListener('load', () => {
                     })
                     .then((json) => {
                         console.log(json);
-                        let p = document.getElementById('msg');
                         if (json.status == 'ok') {
                             var text = 'Deseja jogar novamente?';
-                            if (confirm(text) == true) {
-                                window.open('jogo.php', '_self');
-                            }
+                            confirm(text) ? window.open('jogo.php', '_self') : window.open('index.php', '_self');
                         } else {
                             window.open('index.php', '_self')
                         }
@@ -120,12 +116,9 @@ window.addEventListener('load', () => {
                     })
                     .then((json) => {
                         console.log(json);
-                        let p = document.getElementById('msg');
                         if (json.status == 'ok') {
                             var text = 'Deseja jogar novamente?';
-                            if (confirm(text) == true) {
-                                window.open('jogo.php', '_self');
-                            }
+                            confirm(text) ? window.open('jogo.php', '_self') : window.open('index.php', '_self');
                         } else {
                             window.open('index.php', '_self')
                         }
@@ -134,19 +127,11 @@ window.addEventListener('load', () => {
             }
 
             if ((click == 9) && (okX == false) && (okO == false)) {
-                let p = document.getElementById('msg');
-                p.innerText = 'EMPATE!';
-                var text = 'Deseja jogar novamente?';
-                if (confirm(text) == true) {
-                    window.open('jogo.php', '_self');
-                } else {
-                    window.open('index.php', '_self')
-                }
+                var text = 'EMPATE!\nDeseja jogar novamente?';
+                confirm(text) ? window.open('jogo.php', '_self') : window.open('index.php', '_self');
             }
 
         });
-
-
     }
 
 });
