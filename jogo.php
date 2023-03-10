@@ -36,17 +36,17 @@
             <input type="hidden" name="j2" id="j2" value="<?= $j2 ?>" />
         </form>
         <div>
-            <button id="b0"></button>
-            <button id="b1"></button>
-            <button id="b2"></button>
+            <button class="matriz" id="b0"></button>
+            <button class="matriz" id="b1"></button>
+            <button class="matriz" id="b2"></button>
             <br>
-            <button id="b3"></button>
-            <button id="b4"></button>
-            <button id="b5"></button>
+            <button class="matriz" id="b3"></button>
+            <button class="matriz" id="b4"></button>
+            <button class="matriz" id="b5"></button>
             <br>
-            <button id="b6"></button>
-            <button id="b7"></button>
-            <button id="b8"></button>
+            <button class="matriz" id="b6"></button>
+            <button class="matriz" id="b7"></button>
+            <button class="matriz" id="b8"></button>
         </div>
 
         <br>

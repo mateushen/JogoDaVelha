@@ -62,6 +62,11 @@ window.addEventListener('load', () => {
                 p.innerText = 'Ainda não tem vencedor';
             }
 
+            if ((click == 9) && (okX == false) && (okO == false)) {
+                var text = 'EMPATE!\nDeseja jogar novamente?';
+                confirm(text) ? window.open('jogo.php', '_self') : window.open('index.php', '_self');
+            }
+
             if (okX) {
                 for (let i = 0; i < 9; i++) {
                     let bt = document.getElementById('b' + i);
@@ -124,11 +129,6 @@ window.addEventListener('load', () => {
                         }
                     })
 
-            }
-
-            if ((click == 9) && (okX == false) && (okO == false)) {
-                var text = 'EMPATE!\nDeseja jogar novamente?';
-                confirm(text) ? window.open('jogo.php', '_self') : window.open('index.php', '_self');
             }
 
         });
